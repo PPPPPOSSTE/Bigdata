@@ -10,7 +10,7 @@ public class TestStudent {
     public static void main(String[] args) {
         //无参构造使用
         Student s = new Student();
-        s.setName("zzq");
+        s.setName("zhangsan");
         s.setAge(18);
         System.out.println(s.getName() + "---" + s.getAge());
 

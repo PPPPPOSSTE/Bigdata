@@ -14,7 +14,7 @@ public class OOPDemo01 {
         System.out.println(s1.name);
         System.out.println(s1.age);
         //给学生属性进行赋值
-        s1.name = "张小弛";
+        s1.name = "张小芳";
         s1.age = 18;
         //使用对象的实例变量
         System.out.println(s1.name);

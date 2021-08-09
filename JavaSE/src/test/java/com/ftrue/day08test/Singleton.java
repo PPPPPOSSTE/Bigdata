@@ -31,4 +31,8 @@ public class Singleton {
         }
         return singleton;
     }
+
+    public void show() {
+        System.out.println("nihao");
+    }
 }

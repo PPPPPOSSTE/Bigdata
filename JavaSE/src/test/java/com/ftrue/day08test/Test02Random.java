@@ -10,12 +10,19 @@ import java.util.Scanner;
  */
 public class Test02Random {
     public static void main(String[] args) {
+        method03();
+    }
+
+    public static void method03() {
         int num = (int) (Math.random() * 100 + 1);
         System.out.println("正确数值是：" + num);
 
+        Scanner sc = new Scanner(System.in);
+        int start = 1;
+        int end = 100;
+
         while (true) {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("请输入你要猜的数字（1-100）：");
+            System.out.println("请键盘录入一个" + start + "-" + end + "");
             int guessNumber = sc.nextInt();
 
             if (guessNumber > num) {
@@ -27,5 +34,6 @@ public class Test02Random {
                 break;
             }
         }
+
     }
 }
