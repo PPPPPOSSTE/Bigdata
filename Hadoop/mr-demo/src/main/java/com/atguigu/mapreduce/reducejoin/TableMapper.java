@@ -30,7 +30,7 @@ public class TableMapper extends Mapper<LongWritable, Text, Text, TableBean> {
             outV.setId(orderInfo[0]);
             outV.setPid(orderInfo[1]);
             outV.setAmount(Integer.parseInt(orderInfo[2]));
-            outV.setPname(" ");
+            outV.setPname("");
             outV.setFlag("order");
             context.write(outK, outV);
         } else {

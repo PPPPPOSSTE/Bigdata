@@ -26,7 +26,7 @@ public class TableDriver {
         job.setOutputValueClass(NullWritable.class);
 
         FileInputFormat.setInputPaths(job, new Path("E:\\input\\inputtable"));
-        FileOutputFormat.setOutputPath(job, new Path("E:\\hadoop\\rj5"));
+        FileOutputFormat.setOutputPath(job, new Path("E:\\hadoop\\rj7"));
 
         boolean b = job.waitForCompletion(true);
         System.exit(b ? 0 : 1);

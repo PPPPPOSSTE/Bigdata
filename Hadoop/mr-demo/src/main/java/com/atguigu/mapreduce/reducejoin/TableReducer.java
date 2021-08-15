@@ -11,12 +11,12 @@ import java.util.ArrayList;
 
 public class TableReducer extends Reducer<Text, TableBean, TableBean, NullWritable> {
     private ArrayList<TableBean> orderList = new ArrayList<>();
-    //private TableBean pdBean = new TableBean();
     private TableBean pdBean = new TableBean();
 
     //此处的增强for循环，注意复制值的处理方式
     @Override
     protected void reduce(Text key, Iterable<TableBean> values, Reducer<Text, TableBean, TableBean, NullWritable>.Context context) throws IOException, InterruptedException {
+        orderList.clear();
         // 1001  01  1
         // 1004  01 4
         //       01     小米
