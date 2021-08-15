@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class WordCountReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
     private int sum;
-    private IntWritable v = new IntWritable();
+    private IntWritable outV = new IntWritable();
 
     @Override
     protected void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
@@ -20,7 +20,7 @@ public class WordCountReducer extends Reducer<Text, IntWritable, Text, IntWritab
             sum += value.get();
         }
         //输出
-        v.set(sum);
-        context.write(key, v);
+        outV.set(sum);
+        context.write(key, outV);
     }
 }
