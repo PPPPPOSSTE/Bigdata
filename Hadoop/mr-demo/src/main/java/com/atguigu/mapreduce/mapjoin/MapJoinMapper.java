@@ -19,6 +19,7 @@ public class MapJoinMapper extends Mapper<LongWritable, Text, Text, NullWritable
     private HashMap<String, String> pdMap;
     private Text outK = new Text();
 
+    //任务开始前将pd数据缓存进pdMap
     @Override
     protected void setup(Mapper<LongWritable, Text, Text, NullWritable>.Context context) throws IOException, InterruptedException {
         //创建一个内存中的数据结构来缓存小表的数据
