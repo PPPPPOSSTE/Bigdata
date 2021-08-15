@@ -16,6 +16,7 @@ public class TableReducer extends Reducer<Text, TableBean, TableBean, NullWritab
     //此处的增强for循环，注意复制值的处理方式
     @Override
     protected void reduce(Text key, Iterable<TableBean> values, Reducer<Text, TableBean, TableBean, NullWritable>.Context context) throws IOException, InterruptedException {
+        //集合清零
         orderList.clear();
         // 1001  01  1
         // 1004  01 4
