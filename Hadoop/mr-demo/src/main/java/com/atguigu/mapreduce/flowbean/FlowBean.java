@@ -6,10 +6,9 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-
 /**
- * 1.实现Writable接口
- * */
+ * 1.实现writable接口
+ */
 public class FlowBean implements Writable {
     //私有的属性
     private Integer upFlow;
@@ -17,28 +16,6 @@ public class FlowBean implements Writable {
     private Integer sumFlow;
 
     public FlowBean() {
-    }
-
-    public FlowBean(Integer upFlow, Integer downFlow, Integer sumFlow) {
-        this.upFlow = upFlow;
-        this.downFlow = downFlow;
-        this.sumFlow = sumFlow;
-    }
-
-    //序列化方法
-    @Override
-    public void write(DataOutput out) throws IOException {
-        out.writeInt(upFlow);
-        out.writeInt(downFlow);
-        out.writeInt(sumFlow);
-    }
-
-    //反序列化方法
-    @Override
-    public void readFields(DataInput in) throws IOException {
-        upFlow = in.readInt();
-        downFlow = in.readInt();
-        sumFlow = in.readInt();
     }
 
     public Integer getUpFlow() {
@@ -66,9 +43,24 @@ public class FlowBean implements Writable {
     }
 
     public void setSumFlow() {
-        this.sumFlow = upFlow + downFlow;
+        this.sumFlow = this.upFlow + this.downFlow;
     }
 
+    @Override
+    //序列化方法
+    public void write(DataOutput out) throws IOException {
+        out.writeInt(upFlow);
+        out.writeInt(downFlow);
+        out.writeInt(sumFlow);
+    }
+
+    @Override
+    //反序列化方法
+    public void readFields(DataInput in) throws IOException {
+        upFlow = in.readInt();
+        downFlow = in.readInt();
+        sumFlow = in.readInt();
+    }
 
     @Override
     public String toString() {
